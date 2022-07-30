@@ -21,5 +21,6 @@ kris_tall = my_family_height[0][1]
 dfcz_tall = my_family_height[1][1]
 teddy_tall = my_family_height[2][1]
 svyat777_tall = my_family_height[3][1]
+summ_fam = kris_tall + dfcz_tall + teddy_tall + svyat777_tall
 
-print('Общий рост моей семьи', kris_tall + dfcz_tall + teddy_tall + svyat777_tall, 'см')
+print('Общий рост моей семьи', summ_fam, 'см')
