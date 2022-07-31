@@ -18,4 +18,5 @@ while i < 10:
     i += 1
     expenses_next_mounth += expenses_next_mounth * 0.03
     summ_exp += expenses_next_mounth
-print('Нужно попросить у родителей: ', summ_exp - (educational_grant * 10))
+give_par = summ_exp - (educational_grant * 10)
+print('Нужно попросить у родителей: ', round(float(give_par), 2))
