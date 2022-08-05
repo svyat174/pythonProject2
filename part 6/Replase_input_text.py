@@ -1,4 +1,4 @@
-text = 'яамибюЛ акнитсирК'
+text = input('Enter your text: ')
 a = []
 len_a = []
 b = ''
