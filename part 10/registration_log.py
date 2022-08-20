@@ -13,6 +13,7 @@ class NotAgeError(Exception):
 list_ok = []
 list_nok = []
 
+
 with open('registrations.txt', 'r', encoding='utf-8') as file:
     for line in file:
         try:
