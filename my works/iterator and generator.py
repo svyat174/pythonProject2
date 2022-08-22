@@ -1,38 +1,44 @@
-import time
-
-
 class PrimeNumbers:
 
     def __init__(self, n):
         self.n = n
+        self.last_num = 1
+        self.prime_numbers = []
 
     def __iter__(self):
-        self.i = 1
+        self.last_num = 1
         return self
 
     def __next__(self):
-        self.i += 1
-        if self.i > 0:
-            if self.i > self.n:
-                raise StopIteration()
-            return self.i
+        for num in range(self.last_num + 1, self.n + 1):
+            for prime in self.prime_numbers:
+                if num % prime == 0:
+                    break
+            else:
+                self.last_num = num
+                self.prime_numbers.append(num)
+                return num
+        raise StopIteration()
 
-
-started_at = time.time()
 
 prime_number_iterator = PrimeNumbers(n=10000)
 for number in prime_number_iterator:
     print(number)
 
 
-def prime_numbers_generator(n):
-    for i in range(1, n + 1):
-        yield i
+def get_prime_numbers(n):
+    prime_numbers = []
+    for number in range(2, n+1):
+        for prime in prime_numbers:
+            if number % prime == 0:
+                break
+        else:
+            prime_numbers.append(number)
+            yield number
 
 
-for number in prime_numbers_generator(n=10000):
-    print(number)
+fff = get_prime_numbers(5555)
+for num in fff:
+    print(num)
 
-ended_at = time.time()
-diff_time = ended_at - started_at
-print(round(diff_time, 4), 'sec')
+
