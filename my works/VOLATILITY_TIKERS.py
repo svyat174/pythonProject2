@@ -1,5 +1,6 @@
 import csv
 import os
+import time
 import zipfile
 from collections import defaultdict, Counter
 from threading import Thread
@@ -76,7 +77,8 @@ class CreateDict(Thread):
 a = UnZip(file_name='trades.zip')
 b = CreateDict()
 
-# a.start()
+a.start()
+time.sleep(2)
 b.start()
-# a.join()
+a.join()
 b.join()
